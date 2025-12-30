@@ -454,8 +454,6 @@ h6 {
     display: block;
   }
 }
-
-
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
@@ -1012,6 +1010,91 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Hover Effects for Skills Section
+--------------------------------------------------------------*/
+.skills .skill-box {
+  background-color: var(--surface-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.skills .skill-box:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(232, 117, 50, 0.4);
+}
+
+.skills .skill-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+.skills .skill-box:hover h3 {
+  color: #ffffff;
+}
+
+.skills .skill-box p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  color: var(--default-color);
+  opacity: 0.8;
+  transition: color 0.3s ease;
+}
+
+.skills .skill-box:hover p {
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 1;
+}
+
+.skills .skill-box .text-end {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+.skills .skill-box:hover .text-end {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.skills .skill-box .progress {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-radius: 50px;
+  height: 10px;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.skills .skill-box:hover .progress {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.skills .skill-box .progress .progress-bar {
+  background-color: var(--accent-color);
+  height: 100%;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.skills .skill-box:hover .progress .progress-bar {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
 .resume .resume-wrapper .resume-block {
@@ -1313,6 +1396,132 @@ section,
   }
 }
 
+/* Update Bagian Ini di CSS Portfolio Modern */
+
+.portfolio .portfolio-content {
+  padding: 25px;
+  position: relative;
+  background: #fff;
+  z-index: 2;
+  text-align: center; /* MEMBUAT SEMUA TEKS DI TENGAH */
+}
+
+/* Kategori Kecil (Label) */
+/* =========================================
+   KEMBALI KE STYLE ORIGINAL TEMPLATE
+   ========================================= */
+
+.portfolio .portfolio-filters li {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 20px;
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: color-mix(in srgb, var(--surface-color), transparent 50%);
+  color: var(--default-color);
+  transition: all 0.3s ease-in-out;
+  margin: 0; /* Reset margin aneh-aneh */
+  border: none; /* Hapus border */
+}
+
+.portfolio .portfolio-filters li:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+  color: var(--accent-color);
+  transform: none; /* Hapus efek naik */
+  box-shadow: none;
+}
+
+.portfolio .portfolio-filters li.filter-active {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.portfolio .portfolio-card {
+  background-color: var(--surface-color);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  border: none; /* Hapus border tambahan */
+}
+
+.portfolio .portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio .portfolio-card .portfolio-image img {
+  transform: none; /* Hapus zoom in gambar */
+}
+
+/* --- KEMBALIKAN BAGIAN INI (CONTENT) --- */
+
+.portfolio .portfolio-card .portfolio-content {
+  padding: 25px;
+  text-align: left; /* Kembali rata kiri (standar) */
+  background: transparent;
+}
+
+.portfolio .portfolio-card .portfolio-content .category {
+  /* Hapus semua style kotak/pill/background */
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  width: auto;
+  
+  /* Style Asli */
+  font-size: 14px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  display: block; /* Kembali block biasa */
+  margin-bottom: 10px;
+}
+
+.portfolio .portfolio-card .portfolio-content .category:hover {
+  transform: none;
+  box-shadow: none;
+  background: none;
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-card .portfolio-content h3 {
+  font-size: 20px;
+  margin: 0 0 15px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.portfolio .portfolio-card .portfolio-content p {
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+.portfolio .portfolio-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--heading-color);
+  line-height: 1.3;
+}
+
+.portfolio .portfolio-content p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0;
+  line-height: 1.6;
+  margin-left: auto;  /* Memastikan paragraf di tengah */
+  margin-right: auto;
+  max-width: 90%; /* Agar teks tidak terlalu lebar ke samping */
+}
+
+
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
@@ -1496,61 +1705,66 @@ section,
   }
 }
 
-/* --- CSS Services: Minimalis & Elegan --- */
-
+/*--------------------------------------------------------------
+# Services Section - Custom Style
+--------------------------------------------------------------*/
 .service-item {
-  transition: all 0.3s ease-in-out;
-  border: 1px solid #f0f0f0;
-  height: 100%;
+  background-color: var(--surface-color);
   padding: 30px;
-  background: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
 }
 
-/* Efek kartu naik sedikit saat hover (tetap dipertahankan biar interaktif) */
+/* Efek Hover pada Kotak (Naik sedikit) */
 .service-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border-color: transparent;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* 1. KONTAINER IKON (Tanpa Bulatan) */
+/* --- IKON --- */
 .service-item .icon {
-  margin-bottom: 20px;
-  display: block; /* Tidak perlu flexbox lagi karena tanpa bulatan */
-  padding: 0;
+  margin-bottom: 15px;
 }
 
-/* 2. GAYA IKON (Besar & Warna Aksen) */
 .service-item .icon i {
-  font-size: 48px; /* Ukuran diperbesar seperti semula */
+  font-size: 2.5rem;
   line-height: 1;
-  color: var(--accent-color); /* Warna utama (Biru/Tema) */
-  transition: all 0.3s ease;
+  color: var(--accent-color); /* AWAL: Warna Accent (Oranye) */
+  transition: color 0.3s ease;
 }
 
-/* 3. EFEK HOVER (Ikon Berubah Warna Jadi Gelap/Heading) */
+/* Saat Hover: Ikon jadi Warna Heading (Biru Gelap) */
 .service-item:hover .icon i {
-  color: #0f2943; /* Warna gelap (Heading Color) saat disorot */
+  color: var(--heading-color);
 }
 
-/* 4. JUDUL SERVICE (Tebal & Besar) */
+/* --- JUDUL (H3) --- */
 .service-item h3 {
-  font-weight: 700;  /* Tebal */
-  font-size: 22px;   /* Besar */
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--accent-color); /* AWAL: Warna Accent (Oranye) */
+  transition: color 0.3s ease;
+  cursor: default; /* Kursor biasa (karena link dihapus) */
 }
 
-.service-item h3 a {
-  color: #333;
-  text-decoration: none;
-  transition: 0.3s;
+/* Saat Hover: Judul jadi Warna Heading (Biru Gelap) */
+.service-item:hover h3 {
+  color: var(--heading-color);
 }
 
-.service-item:hover h3 a {
-  color: var(--accent-color); /* Judul jadi warna tema saat hover */
+/* --- DESKRIPSI (P) --- */
+.service-item p {
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  line-height: 1.6;
+  margin-bottom: 0;
 }
-
 /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
@@ -2024,4 +2238,40 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   padding: 30px 0;
+}
+
+/*--------------------------------------------------------------
+# Sertifikat
+--------------------------------------------------------------*/
+/* --- Tombol Sertifikat Keren --- */
+.btn-cert {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Jarak antara ikon dan teks */
+  padding: 8px 24px;
+  background-color: transparent;
+  color: var(--accent-color); /* Warna oranye tema */
+  border: 2px solid var(--accent-color);
+  border-radius: 50px; /* Membuat sudut bulat */
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.btn-cert:hover {
+  background-color: var(--accent-color);
+  color: #fff; /* Teks jadi putih saat hover */
+  transform: translateY(-3px); /* Tombol naik sedikit */
+  box-shadow: 0 8px 15px rgba(232, 117, 50, 0.3); /* Efek bayangan */
+}
+
+.btn-cert i {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.btn-cert:hover i {
+  transform: scale(1.1); /* Ikon membesar sedikit saat hover */
 }
